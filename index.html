@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para o amor da minha vida</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", Arial, sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #2b123d, #08070c 60%);
+      color: #fff;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+      position: relative;
+    }
+
+    .hero {
+      max-width: 850px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: 45px 25px;
+      box-shadow: 0 0 45px rgba(168, 85, 247, 0.25);
+      backdrop-filter: blur(12px);
+    }
+
+    h1 {
+      font-size: 2.6rem;
+      color: #e9d5ff;
+      margin-bottom: 20px;
+    }
+
+    .typing {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: #f4eaff;
+      min-height: 120px;
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #9333ea, #ec4899);
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(236,72,153,0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.06);
+      box-shadow: 0 0 30px rgba(236,72,153,0.7);
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 2rem;
+      color: #f0abfc;
+      margin-bottom: 35px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      padding: 25px;
+      margin-bottom: 25px;
+      line-height: 1.8;
+      color: #f5e8ff;
+      box-shadow: 0 0 25px rgba(147,51,234,0.18);
+    }
+
+    .week {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .day {
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .day:hover {
+      transform: translateY(-8px);
+      background: rgba(147,51,234,0.18);
+    }
+
+    .hard {
+      border: 1px solid rgba(236,72,153,0.55);
+      box-shadow: 0 0 30px rgba(236,72,153,0.25);
+    }
+
+    .hidden-message {
+      display: none;
+      margin-top: 15px;
+      color: #fbcfe8;
+      font-style: italic;
+    }
+
+    .surprise-box {
+      text-align: center;
+    }
+
+    .love-counter {
+      font-size: 1.5rem;
+      color: #f9a8d4;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #c4b5fd;
+      background: #06050a;
+    }
+
+    .heart {
+      position: fixed;
+      top: -10px;
+      color: #ec4899;
+      animation: fall 6s linear infinite;
+      opacity: 0.8;
+      z-index: -1;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .typing {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="hero">
+      <h1>Para a mulher que eu mais quero ver bem</h1>
+      <p class="typing" id="typing"></p>
+      <button class="btn" onclick="scrollToSection()">Ver o que eu preparei para você</button>
+    </div>
+  </header>
+
+  <section id="principal">
+    <h2 class="title">Ta tudo perfeito ultimamente</h2>
+
+    <div class="card">
+      Meu amor, eu queria que você abrisse isso e sentisse um pouco do quanto você é importante para mim.
+      Eu sei que sua rotina não é fácil. Sei que de segunda a sábado você enfrenta uma escala cansativa,
+      dias puxados, responsabilidades, cansaço e mesmo assim continua sendo essa mulher forte, linda e incrível.
+      <br><br>
+      Tudo o que eu mais quero nessa vida é o seu bem. Quero te ver em paz, sorrindo, descansando, sendo cuidada
+      e lembrando todos os dias que você é amada de um jeito enorme.
+    </div>
+
+    <div class="card">
+      Eu sinto saudade de você nos 6 dias da semana. Saudade da sua voz, do seu carinho, do seu jeito,
+      da sua presença e de tudo que me lembra você.
+      Mesmo quando eu não estou perto, meu coração está aí, torcendo por você.
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">Sua semana, vista com carinho</h2>
+
+    <div class="week">
+      <div class="card day" onclick="showMsg(this)">
+        <h3>Segunda-feira</h3>
+        <p>O começo da luta, e mesmo assim você continua firme.</p>
+        <div class="hidden-message">Você é mais forte do que imagina, meu amor.</div>
+      </div>
+
+      <div class="card day" onclick="showMsg(this)">
+        <h3>Terça-feira</h3>
+        <p>Mais um dia de esforço, mais um dia em que eu tenho orgulho de você.</p>
+        <div class="hidden-message">Eu queria poder aliviar seu cansaço com um abraço.</div>
+      </div>
+
+      <div class="card day hard" onclick="showMsg(this)">
+        <h3>Quarta-feira</h3>
+        <p>Um dos dias que mais te cansam, e mesmo assim você encara.</p>
+        <div class="hidden-message">Nesse dia, eu queria estar do seu lado dizendo: descansa, eu cuido de você.</div>
+      </div>
+
+      <div class="card day" onclick="showMsg(this)">
+        <h3>Quinta-feira</h3>
+        <p>Você segue forte, mesmo quando o corpo já pede pausa.</p>
+        <div class="hidden-message">Você merece carinho, paz e um amor que te valorize.</div>
+      </div>
+
+      <div class="card day hard" onclick="showMsg(this)">
+        <h3>Sexta-feira</h3>
+        <p>Outro dia pesado, daqueles que testam sua força.</p>
+        <div class="hidden-message">Eu tenho tanto orgulho de você que nem sei explicar direito.</div>
+      </div>
+
+      <div class="card day" onclick="showMsg(this)">
+        <h3>Sábado</h3>
+        <p>Mesmo quando muitos descansam, você ainda está lutando.</p>
+        <div class="hidden-message">Você merece um mundo inteiro de cuidado e descanso.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">Mensagens escondidas</h2>
+
+    <div class="card surprise-box">
+      <p>Clique no botão e descubra uma mensagem que eu guardei para você.</p>
+      <button class="btn" onclick="newSurprise()">Abrir surpresa</button>
+      <div class="love-counter" id="surpriseText"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="title">O que eu desejo para você</h2>
+
+    <div class="card">
+      Eu desejo que você nunca esqueça o quanto é especial.
+      Que mesmo nos dias difíceis, você lembre que tem alguém que se importa com seu cansaço,
+      com sua paz, com seu sorriso e com seu coração.
+      <br><br>
+      Eu não quero apenas estar com você nos dias bons.
+      Eu quero te amar também nos dias pesados, nos dias silenciosos, nos dias em que você só precisa de colo.
+    </div>
+
+    <div class="card">
+      Meu maior desejo é que você fique bem. Que você se cuide. Que você descanse.
+      Que você nunca duvide da mulher maravilhosa que é.
+      <br><br>
+      E mesmo com saudade, mesmo longe, mesmo esperando o momento de te ver,
+      eu continuo aqui: pensando em você, torcendo por você e amando você.
+    </div>
+  </section>
+
+  <footer>
+    Feito com amor, saudade e carinho.  
+    <br>
+    Você é meu pensamento mais bonito.
+  </footer>
+
+  <script>
+    const text = "Meu amor, esse site é uma forma pequena de mostrar uma coisa enorme: eu quero te ver bem, quero te ver feliz, quero cuidar de você mesmo de longe e lembrar que você nunca está sozinha.";
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 45);
+      }
+    }
+
+    typeWriter();
+
+    function scrollToSection() {
+      document.getElementById("principal").scrollIntoView({ behavior: "smooth" });
+    }
+
+    function showMsg(card) {
+      const msg = card.querySelector(".hidden-message");
+      msg.style.display = msg.style.display === "block" ? "none" : "block";
+    }
+
+    const surprises = [
+      "Você é uma mulher incrível, mesmo quando acha que está apenas sobrevivendo ao dia.",
+      "Eu sinto sua falta de um jeito que aperta o peito, mas também me lembra o quanto você vale a pena.",
+      "Quarta e sexta podem ser pesadas, mas você continua sendo luz até nos dias difíceis.",
+      "Eu admiro sua força, seu esforço e esse coração lindo que você tem.",
+      "Tudo o que eu quero é te ver bem, descansada, feliz e amada como você merece.",
+      "Você não precisa ser forte o tempo todo. Comigo, você pode só ser você.",
+      "Minha saudade tem seu nome, seu jeito e seu sorriso."
+    ];
+
+    function newSurprise() {
+      const random = Math.floor(Math.random() * surprises.length);
+      document.getElementById("surpriseText").innerText = surprises[random];
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerHTML = "❤";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 18 + 12 + "px";
+      heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 7000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>
+
